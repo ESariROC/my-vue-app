@@ -25,9 +25,6 @@
                         {{selectedCountry.id}}
                     </li>
                     <li class="list-group-item">
-                        <img :src="getImgUrl(selectedCountry.img)" class="img-fluid" />
-                    </li>
-                    <li class="list-group-item">
                         {{selectedCountry.name}}
                     </li>
                     <li class="list-group-item">
@@ -73,7 +70,9 @@ export default {
             console.warn("click")
             this.selectedCountryIndex = index;
         },
-        
+        getImgurl(img) {
+          return require("../assets/countries/" + img);
+        },
     },
     computed: {
         selectedCountry(){
